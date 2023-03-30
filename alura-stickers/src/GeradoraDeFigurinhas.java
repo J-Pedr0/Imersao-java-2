@@ -16,7 +16,7 @@ import javax.imageio.ImageIO;
 
 public class GeradoraDeFigurinhas {
 
-    public void cria(InputStream inputStream, String nomeArquivo, String texto, InputStream inputStreamSobreposicao) throws Exception {
+    public void cria(InputStream inputStream, String nomeArquivo /*, String texto, InputStream inputStreamSobreposicao*/ ) throws Exception {
 
         // leitura da imagem
         // InputStream inputStream = new FileInputStream(
@@ -39,17 +39,17 @@ public class GeradoraDeFigurinhas {
         Graphics2D graphics = (Graphics2D) novaImagem.getGraphics();
         graphics.drawImage(imagemOriginal, 0, 0, null);
 
-        BufferedImage imagemSobreposicao = ImageIO.read(inputStreamSobreposicao);
-        int posicaoImagemSobreposicaoY = novaAltura - imagemSobreposicao.getHeight();
-        graphics.drawImage(imagemSobreposicao, 0, posicaoImagemSobreposicaoY, null);
+        // BufferedImage imagemSobreposicao = ImageIO.read(inputStreamSobreposicao);
+        // int posicaoImagemSobreposicaoY = novaAltura - imagemSobreposicao.getHeight();
+        // graphics.drawImage(imagemSobreposicao, 0, posicaoImagemSobreposicaoY, null);
 
         // configurar a fonte
-        var fonte = new Font("impact", Font.BOLD, 200);
+        var fonte = new Font("impact", Font.BOLD, 100);
         graphics.setColor(Color.YELLOW);
         graphics.setFont(fonte);
 
         // escrever uma frase na nova imgem
-        // String texto = "TOPZERA";
+        String texto = "TOPZERA";
         FontMetrics fontMetrics = graphics.getFontMetrics();
         Rectangle2D retangulo = fontMetrics.getStringBounds(texto, graphics);
         int larguraTexto = (int) retangulo.getWidth();
@@ -74,7 +74,7 @@ public class GeradoraDeFigurinhas {
         graphics.setClip(outline);
 
         // escrever a nova imagem em um arquivo
-        ImageIO.write(novaImagem, "png", new File("C:/Serrateco/ImersaoJava/Aula1/alura-stickers/" + nomeArquivo));
+        ImageIO.write(novaImagem, "png", new File("C:/Serrateco/ImersaoJava/Aula1/" + nomeArquivo));
 
         // /figurinha.png"
 
