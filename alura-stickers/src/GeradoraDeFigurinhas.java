@@ -74,7 +74,7 @@ public class GeradoraDeFigurinhas {
         graphics.setClip(outline);
 
         // escrever a nova imagem em um arquivo
-        ImageIO.write(novaImagem, "png", new File("C:/Serrateco/ImersaoJava/Aula1/" + nomeArquivo));
+        ImageIO.write(novaImagem, "png", new File("C:/Serrateco/ImersaoJava/Aula1/alura-stickers/" + nomeArquivo));
 
         // /figurinha.png"
 

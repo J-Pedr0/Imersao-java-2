@@ -18,7 +18,7 @@ public class App {
         // String url = apiNASA.getUrl();
         // ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
 
-        API api = API.IMDB_TOP_MOVIES;
+        API api = API.LINGUAGENS;
         String url = api.getUrl();
         ExtratorDeConteudo extrator = api.getExtrator();
 
